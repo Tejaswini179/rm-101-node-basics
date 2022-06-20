@@ -24,11 +24,11 @@ app.get("/users",  (req, res) => {
   }
 });
 
-app.get("/users/:id",async (req, res) => {
+app.get("/users/:id", (req, res) => {
   try {
-    const Data = await data.filter((data) => data.id == req.params.id);
+    const Data =  data.filter((data) => data.id == req.params.id);
 
-    return res.json({ id: Data });
+    return res.json({ data: Data });
   } catch (error) {
     return res.send({ message: error.message });
   }
